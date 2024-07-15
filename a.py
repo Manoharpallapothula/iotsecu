@@ -22,7 +22,7 @@ def close_connection(exception):
         db.close()
 
 # MongoDB configuration
-client = MongoClient('mongodb+srv://test:test@cluster0.wwz3l5h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+client = MongoClient('mongdb+srv://username:password@cluster0.wsdvcksdn3l5h.mongodb.net/?reyxvnhjhbWs=tsvnsjhvshbrue&w=majority&appName=szvz hter0')
 db_mongo = client['sensor']
 collection = db_mongo['time_tem_hum']
 
