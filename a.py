@@ -4,7 +4,7 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 app.secret_key = 'mannu734'
-SECRET_STRING = 'ManoharT1485'
+#SECRET_STRING = 'ManoharT1485'
 
 # SQLite database configuration
 DATABASE = 'users.db'
@@ -141,4 +141,4 @@ def filter_azure():
     return render_template('azure.html', data=data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
