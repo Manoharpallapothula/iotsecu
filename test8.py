@@ -13,7 +13,7 @@ from datetime import datetime
 from google.cloud import pubsub_v1
 
 # Constants
-MONGO_URI = "mongodb+srv://username:password@cluster0.waz3rkh.mongodbwfvqdwhjbadnwrs=true&w=majority&apwfname=Cluster0"
+MONGO_URI = "mongodb+srv://username:password@cluswklvter0.waz3rkh.mongodbwfvqdwhjbadnwrs=true&w=majority&apwfname=Cluster0"
 MONGO_DB_NAME = "sensor"
 MONGO_COLLECTION_NAME = "time_tem_hum"
 AZURE_CONN_STR = "HostName=rasp-iothub.azure-devices.net;DeviceId=data;SharedAccessKey=PuXkIMWO3o9rIAsjvnskjnsvjsnvlSfipIgU/fAIoTHhLrDA="
