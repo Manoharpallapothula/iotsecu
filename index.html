@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Data</title>
+    <style>
+        img, h1 {
+            display: inline-block;
+            vertical-align: middle; /* Align elements vertically */
+            margin-bottom: 20px; /* Remove default margin */
+        }
+        img {
+            margin-right: 300px; /* Space between image and heading */
+        }
+        h1 {
+            background-color: #4CAF50; /* Green background for heading */
+            color: white; /* White text color */
+            padding: 10px 20px; /* Padding around text */
+            border-radius: 5px; /* Rounded corners */
+            display: inline-block; /* Ensure inline block display */
+        }
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .button-container button, .button-container a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .button-container button:hover, .button-container a:hover {
+            background-color: #45a049;
+        }
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .filter-buttons button {
+            background-color: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .filter-buttons button:hover {
+            background-color: #e68a00;
+        }
+        .logout-button {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .logout-button a {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .logout-button a:hover {
+            background-color: #d32f2f;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy0x5TXAZwt1-8S7dMnehqGlTOLIffkE6CQvW2R2C9&s%22" alt="tessolve" width="250px">
+    <h1>Sensor Data</h1>
+    <div class="container">
+        <table>
+            <tr>
+                <th>S.No</th>
+                <th>Cloud</th>
+                <th>Timestamp</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+            </tr>
+            {% for entry in data %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ entry.Cloud }}</td>
+                <td>{{ entry.timestamp }}</td>
+                <td>{{ entry.temperature }}</td>
+                <td>{{ entry.humidity }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="filter-buttons">
+            <form action="/filter_aws" method="get">
+                <button type="submit">AWS</button>
+            </form>
+            <form action="/filter_azure" method="get">
+                <button type="submit">Azure</button>
+            </form>
+            <form action="/filter_google" method="get">
+                <button type="submit">Google</button>
+            </form>
+        </div>
+        <br>
+        <div class="logout-button">
+            <a href="/">Logout</a>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Tessolve. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sensor Data</title>
+    <style>
+        img, h1 {
+            display: inline-block;
+            vertical-align: middle; /* Align elements vertically */
+            margin-bottom: 20px; /* Adjust margin for spacing */
+        }
+        img {
+            margin-right: 270px; /* Space between image and heading */
+        }
+        h1 {
+            background-color: #4CAF50; /* Green background for heading */
+            color: white; /* White text color */
+            padding: 10px 20px; /* Padding around text */
+            border-radius: 5px; /* Rounded corners */
+            display: inline-block; /* Ensure inline block display */
+        }
+        .google-console-button {
+            background-color: #4CAF50; /* Green color for Google Console button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            position: absolute; /* Position absolute for precise placement */
+            top: 40px; /* Adjust top position */
+            right: 20px; /* Adjust right position */
+        }
+        .google-console-button:hover {
+            background-color: #4CAF50; /* Darker shade on hover */
+        }
+        body {
+            background-color: #f0f0f0; /* Light gray background color */
+            font-family: Arial, sans-serif; /* Common readable font */
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px; /* Adjust margin as needed */
+        }
+        button:hover {
+            background-color: #4CAF50;
+        }
+        .logout-button {
+            text-align: center;
+            margin-top: 20px; /* Adjust margin for spacing */
+        }
+        .logout-button a {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .logout-button a:hover {
+            background-color: #d32f2f;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://cloud.google.com/pubsub?hl=en" class="google-console-button">Go to Google Console</a>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy0x5TXAZwt1-8S7dMnehqGlTOLIffkE6CQvW2R2C9&s" alt="tessolve" width="250px">
+    <h1>Google Sensor Data</h1>
+    <div class="container">
+        <table border="1">
+            <tr>
+                <th>Timestamp</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+            </tr>
+            {% for entry in data %}
+            <tr>
+                <td>{{ entry.timestamp }}</td>
+                <td>{{ entry.temperature }}</td>
+                <td>{{ entry.humidity }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="logout-button">
+            <a href="/">Logout</a>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Tessolve. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

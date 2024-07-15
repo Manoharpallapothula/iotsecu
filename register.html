@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            background-color: #8c8c8c; /* Light gray background color */
+            font-family: Arial, sans-serif; /* Common readable font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            position: relative; /* Position relative for absolute positioning of image */
+        }
+        img {
+            position: absolute; /* Position image absolutely */
+            top: 20px; /* 20px from the top */
+            left: 20px; /* 20px from the left */
+            width: 250px; /* Adjust image width as needed */
+            /*border-radius: 50%; /* Rounded corners for the image */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+        .container {
+            background-color: #f0f0f0; /* Light gray background for the form container */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #333; /* Dark text color */
+            margin-bottom: 20px; /* Space below heading */
+        }
+        form {
+            text-align: left; /* Align form elements to the left */
+        }
+        label, input, button {
+            display: block;
+            width: 100%;
+            margin: 10px auto; /* Center elements with some margin */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding and border in element's total width/height */
+            font-size: 16px;
+        }
+        button {
+            background-color: #8c00ff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #6a00cc; /* Darker shade on hover */
+        }
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy0x5TXAZwt1-8S7dMnehqGlTOLIffkE6CQvW2R2C9&s" alt="tessolve">
+    <div class="container">
+        <h1>REGISTER</h1>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <form action="/register" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="secret_string">Registration String:</label>
+            <input type="text" id="secret_string" name="secret_string" required>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
