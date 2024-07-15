@@ -84,7 +84,7 @@ def main():
         cloud = "AWS"
         client = mqtt.Client()
         client.on_connect = on_connect
-        client.tls_set(ca_certs='./AmazonRootCA11.pem', certfile='./certificate1.pem.crt', keyfile='./private1.pem.key', tls_version=ssl.PROTOCOL_SSLv23)
+        client.tls_set(ca_certs='./AmazonRootCA11.pem', certfile='./certificate1.pem.crt', keyfile='./private1.pem.key',cert_reqs=ssl.CERT_REQUIRED, tls_version=ssl.PROTOCOL_SSLv23)
         #client.tls_insecure_set(True)
         client.connect("a2axn9ibwlfeel-ats.iot.us-east-1.amazonaws.com", 8883, 60)
         try:
