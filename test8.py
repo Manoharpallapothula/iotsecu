@@ -13,10 +13,10 @@ from datetime import datetime
 from google.cloud import pubsub_v1
 
 # Constants
-MONGO_URI = "mongodb+srv://test:test@cluster0.wwz3l5h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGO_URI = "mongodb+srv://username:password@cluster0.waz3rkh.mongodbwfvnwrs=true&w=majority&apwfname=Cluster0"
 MONGO_DB_NAME = "sensor"
 MONGO_COLLECTION_NAME = "time_tem_hum"
-AZURE_CONN_STR = "HostName=rasp-iothub.azure-devices.net;DeviceId=data;SharedAccessKey=PuXkIMWO3o9rIAiz1eOZCSNlSfipIgU/fAIoTHhLrDA="
+AZURE_CONN_STR = "HostName=rasp-iothub.azure-devices.net;DeviceId=data;SharedAccessKey=PuXkIMWO3o9rIAsjvnskjnsvjsnvlSfipIgU/fAIoTHhLrDA="
 GOOGLE_PROJECT_ID = "cloud-425008"
 GOOGLE_TOPIC_NAME = "raspidata"
 keyfile_path = "./googlekey.json"
@@ -86,7 +86,7 @@ def main():
         client.on_connect = on_connect
         client.tls_set(ca_certs='./AmazonRootCA11.pem', certfile='./certificate1.pem.crt', keyfile='./private1.pem.key',cert_reqs=ssl.CERT_REQUIRED, tls_version=ssl.PROTOCOL_TLSv1_2)
         #client.tls_insecure_set(True)
-        client.connect("a2axn9ibwlfeel-ats.iot.us-east-1.amazonaws.com", 8883, 60)
+        client.connect("a2acbaschjbacbachabwlfeel-ats.iot.us-east-1.amazonaws.com", 8883, 60)
         try:
             while True:
                 temperature, humidity = read_sensor_data()
